@@ -1,4 +1,3 @@
-// Background service worker
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'murloc_ping') {
     const responses = [
@@ -11,5 +10,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     const randomResponse = responses[Math.floor(Math.random() * responses.length)];
     sendResponse({ message: randomResponse });
   }
-  return true; // Will respond asynchronously
+  return true;
 });
